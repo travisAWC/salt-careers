@@ -327,6 +327,91 @@
     line-height: 1.7;
   }
 
+  /* ── COMPARISON TABLE ── */
+  .compare-section {
+    padding: 100px 0;
+    background: var(--warm-white);
+  }
+
+  .compare-grid {
+    margin-top: 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .compare-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-bottom: 1px solid var(--stone-light);
+  }
+
+  .compare-row:last-child {
+    border-bottom: none;
+  }
+
+  .compare-header {
+    border-bottom: 2px solid var(--stone-light);
+  }
+
+  .compare-header .compare-left,
+  .compare-header .compare-right {
+    padding: 16px 24px;
+  }
+
+  .compare-header .compare-left {
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    font-weight: 500;
+  }
+
+  .compare-header .compare-right {
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--sage-dark);
+    font-weight: 500;
+  }
+
+  .compare-left {
+    padding: 20px 24px;
+    background: rgba(196, 114, 78, 0.04);
+    border-right: 1px solid var(--stone-light);
+  }
+
+  .compare-right {
+    padding: 20px 24px;
+    background: rgba(122, 140, 110, 0.04);
+  }
+
+  .compare-left h4,
+  .compare-right h4 {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    font-size: 0.88rem;
+    margin-bottom: 4px;
+    color: var(--ink);
+  }
+
+  .compare-left p,
+  .compare-right p {
+    font-size: 0.8rem;
+    color: #6b6860;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 600px) {
+    .compare-row {
+      grid-template-columns: 1fr;
+    }
+    .compare-left {
+      border-right: none;
+      border-bottom: 1px dashed var(--stone-light);
+    }
+  }
+
   /* ── DIFFERENCE / SOLUTIONS ── */
   .diff-section {
     padding: 100px 0;
@@ -939,7 +1024,7 @@
       <img src="salt_logo.png" alt="Salt Landscaping" class="hero-logo">
       <p class="hero-eyebrow">We're hiring experienced landscapers</p>
       <h1>You've earned the right to work somewhere that <em>matches your standard.</em></h1>
-      <p class="hero-sub">Premium projects. Real autonomy. Designs made by landscapers, for landscapers. Tools that handle the admin so you can focus on building.</p>
+      <p class="hero-sub">Premium projects from $20K to $400K+. Real autonomy. Designs made by landscapers, for landscapers. Tools that handle the admin so you can focus on building.</p>
       <div class="hero-buttons">
         <a href="#apply" class="btn-primary">Apply Now</a>
         <a href="#problems" class="btn-secondary">See What's Different</a>
@@ -947,7 +1032,7 @@
       <div class="hero-tags">
         <span class="hero-tag">SE Queensland</span>
         <span class="hero-tag">Full-Time</span>
-        <span class="hero-tag">$85K &ndash; $110K + Super</span>
+        <span class="hero-tag">$85K &ndash; $110K + Super + Bonuses</span>
         <span class="hero-tag">Monday &ndash; Friday</span>
       </div>
     </div>
@@ -970,8 +1055,8 @@
 
       <div class="pain-card reveal">
         <span class="pain-icon">&#128221;</span>
-        <h3>Drowning in Paperwork</h3>
-        <p>SWMs, JSAs, daily diaries, timesheets, site reports. Half your week feels like admin. You got into this trade to build things, not fill out forms in a dirty ute at 6pm.</p>
+        <h3>Compliance Is Either Ignored or Impossible</h3>
+        <p>You've seen what happens when WHS gets neglected &mdash; careers destroyed, families broken, livelihoods gone overnight. But on most sites, doing it properly means drowning in paper forms, SWMs nobody reads, and JSAs done in the ute at 6pm. The only places that take compliance seriously are union sites, and that comes with its own baggage. There's no middle ground.</p>
       </div>
 
       <div class="pain-card reveal">
@@ -1009,6 +1094,88 @@
   <cite class="reveal">The Homeowner Test &mdash; Salt Landscaping Standard</cite>
 </div>
 
+<!-- ── SIDE-BY-SIDE COMPARISON ── -->
+<section class="compare-section" id="compare">
+  <div class="container">
+    <p class="section-label reveal">The Contrast</p>
+    <h2 class="section-title reveal">Most companies vs. <em>Salt.</em></h2>
+    <p class="section-desc reveal">A quick look at how we handle the six biggest frustrations in landscaping.</p>
+
+    <div class="compare-grid reveal">
+      <div class="compare-row compare-header">
+        <div class="compare-left">The Industry Norm</div>
+        <div class="compare-right">How We Do It at Salt</div>
+      </div>
+
+      <div class="compare-row">
+        <div class="compare-left">
+          <h4>Unbuildable designs</h4>
+          <p>Architects who've never picked up a shovel drawing fantasy plans</p>
+        </div>
+        <div class="compare-right">
+          <h4>In-house structural landscaper designs</h4>
+          <p>Design and build under the same roof &mdash; every plan is buildable</p>
+        </div>
+      </div>
+
+      <div class="compare-row">
+        <div class="compare-left">
+          <h4>Compliance is a joke</h4>
+          <p>Paper SWMs done in the ute, or ignored entirely until something goes wrong</p>
+        </div>
+        <div class="compare-right">
+          <h4>Genuine compliance, made seamless</h4>
+          <p>Trellis makes 100% WHS compliance fast enough it actually gets done</p>
+        </div>
+      </div>
+
+      <div class="compare-row">
+        <div class="compare-left">
+          <h4>Boss overpromises</h4>
+          <p>Sells a $40K job for $28K &mdash; you wear the pressure and the blame</p>
+        </div>
+        <div class="compare-right">
+          <h4>AI-accurate quoting</h4>
+          <p>Jobs scoped and priced properly before you step on site. No surprises</p>
+        </div>
+      </div>
+
+      <div class="compare-row">
+        <div class="compare-left">
+          <h4>"She'll be right" culture</h4>
+          <p>You're the only one who notices the fall is wrong or the wall isn't level</p>
+        </div>
+        <div class="compare-right">
+          <h4>The S.A.L.T. Standard</h4>
+          <p>Four published standards lived on every site. Excellence is identity, not optional</p>
+        </div>
+      </div>
+
+      <div class="compare-row">
+        <div class="compare-left">
+          <h4>Micromanaged</h4>
+          <p>You've run sites for years but still can't make a call without permission</p>
+        </div>
+        <div class="compare-right">
+          <h4>Real autonomy</h4>
+          <p>You manage your site, coordinate subs, make decisions. Direct access to the owners</p>
+        </div>
+      </div>
+
+      <div class="compare-row">
+        <div class="compare-left">
+          <h4>Dead-end career</h4>
+          <p>Same projects, same pay, no growth path no matter how good you are</p>
+        </div>
+        <div class="compare-right">
+          <h4>Apprentice to partner</h4>
+          <p>Clear path to team leader with bonuses and profit share as we scale together</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ── THE SALT DIFFERENCE ── -->
 <section class="diff-section" id="difference">
   <div class="container">
@@ -1020,15 +1187,15 @@
       <div class="diff-card reveal">
         <span class="diff-number">01</span>
         <h3>Designs by Structural Landscapers</h3>
-        <p>Our plans are created by people who've actually built retaining walls, laid drainage, and coordinated subs. Not architectural designers guessing from a screen. When you read a Salt plan, it makes sense &mdash; because a landscaper designed it.</p>
+        <p>We have an in-house design team that works directly alongside our build crews. Our plans are created by people who've actually built retaining walls, laid drainage, and coordinated subs &mdash; not architectural designers guessing from a screen. Because design and construction sit under the same roof, every plan is buildable, detailed, and signed off before you start.</p>
         <p class="takeaway">&rarr; No disconnect between what's drawn and what's built.</p>
       </div>
 
       <div class="diff-card reveal">
         <span class="diff-number">02</span>
-        <h3>AI Handles the Admin</h3>
-        <p>We use purpose-built technology to handle quoting, estimating, proposals, and compliance documentation. SWMs, JSAs, site diaries &mdash; done in minutes, not hours. You spend your day on the tools, not on a clipboard.</p>
-        <p class="takeaway">&rarr; More building. Less paperwork. That's the deal.</p>
+        <h3>Genuine Compliance, Made Seamless</h3>
+        <p>We built Trellis &mdash; our own platform that makes real WHS compliance fast enough that it actually gets done on every project. SWMs, JSAs, site inductions, daily diaries, incident reports &mdash; all digital, all compliant, all completed in minutes on your phone. Not tick-and-flick theatre. Genuine, 100% compliant safety management on every single job &mdash; without needing a union ticket to get there.</p>
+        <p class="takeaway">&rarr; Safe sites that protect your livelihood. No paper forms. No shortcuts.</p>
       </div>
 
       <div class="diff-card reveal">
@@ -1041,14 +1208,14 @@
       <div class="diff-card reveal">
         <span class="diff-number">04</span>
         <h3>Premium Projects, Premium Standards</h3>
-        <p>Our projects range from $5K feature gardens to $150K+ full property transformations. Every client values craftsmanship over cost. You'll never be asked to cut corners to hit a number. Build it right &mdash; that's the only brief.</p>
+        <p>Our projects range from $20K feature gardens to $400K+ full property transformations. Every client values craftsmanship over cost. You'll never be asked to cut corners to hit a number. Build it right &mdash; that's the only brief.</p>
         <p class="takeaway">&rarr; Work you're proud to drive past and say "I built that."</p>
       </div>
 
       <div class="diff-card reveal">
         <span class="diff-number">05</span>
-        <h3>A Culture That Demands Excellence</h3>
-        <p>We have six published standards that every person on a Salt site lives by. "The standard you walk past is the standard you accept." If you've been frustrated by crews who don't care &mdash; you'll find people here who do.</p>
+        <h3>The S.A.L.T. Standard</h3>
+        <p>We have four non-negotiable standards that define who we are &mdash; not just what we do. Standard of Excellence. Always Take Ownership. Lift Each Other. Trust The Process. If you've been frustrated by crews who don't care &mdash; you'll find people here who do.</p>
         <p class="takeaway">&rarr; 100+ five-star reviews because we don't ship "good enough."</p>
       </div>
 
@@ -1065,51 +1232,37 @@
 <!-- ── OUR STANDARDS ── -->
 <section class="standards-section" id="standards">
   <div class="container">
-    <p class="section-label reveal">The Salt Standards</p>
-    <h2 class="section-title reveal">Six principles that define how we <em>think, build, and lead.</em></h2>
-    <p class="section-desc reveal">These aren't posters on a wall. They're practiced on every site, every day. If these resonate with you, you'll feel at home here.</p>
+    <p class="section-label reveal">The S.A.L.T. Standard</p>
+    <h2 class="section-title reveal">Four non-negotiables that define <em>who we are.</em></h2>
+    <p class="section-desc reveal">Not rules. Not suggestions. Identity. These are practiced on every site, every day. If they resonate with you, you'll feel at home here.</p>
 
-    <div class="standards-grid">
+    <div class="standards-grid" style="grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));">
       <div class="standard-card reveal">
-        <p class="standard-num">Standard 01</p>
-        <h3>Truth Over Tenure</h3>
-        <p class="standard-tagline">Weight the Argument, Not the Title</p>
-        <p>A good idea from an apprentice beats a bad idea from the boss. We ask junior team members to speak first. Hierarchy is for logistics, not logic.</p>
+        <p class="standard-num">S</p>
+        <h3>Standard of Excellence</h3>
+        <p class="standard-tagline">Leave No Trace. Sharpen Your Blade.</p>
+        <p>We don't care for industry standards. We set the standard, and our standard is excellence. We leave every site cleaner than we found it. No tire tracks on the lawn, no cigarette butts in the mulch. Tight joints, crisp edges, smooth finishes. "Good enough" is not in our vocabulary &mdash; we do it right or not at all.</p>
       </div>
 
       <div class="standard-card reveal">
-        <p class="standard-num">Standard 02</p>
-        <h3>Disagree and Commit</h3>
-        <p class="standard-tagline">Debate in the Studio, Unity on Site</p>
-        <p>At the toolbox meeting, we argue like lawyers. Once we're on the tools, we march like a battalion. If we picked Plan B, you become Plan B's biggest champion.</p>
+        <p class="standard-num">A</p>
+        <h3>Always Take Ownership</h3>
+        <p class="standard-tagline">Plumb Is Plumb. No Excuses.</p>
+        <p>A post is either vertical or it isn't. Weather, traffic, or a bad night doesn't change the standard. We say "I screwed up" first. We fix problems in 30 minutes, not 30 excuses. If you see a problem, you own it &mdash; even if you didn't cause it.</p>
       </div>
 
       <div class="standard-card reveal">
-        <p class="standard-num">Standard 03</p>
-        <h3>Lead with Questions</h3>
-        <p class="standard-tagline">Coach &gt; Command</p>
-        <p>Instead of "fix this," we ask "how would you approach solving this?" Telling creates followers. Asking creates leaders. Our 4:1 ask ratio is deliberate.</p>
+        <p class="standard-num">L</p>
+        <h3>Lift Each Other</h3>
+        <p class="standard-tagline">Words Build or Destroy. Choose Courage.</p>
+        <p>We draw out the potential in everyone, even when it's uncomfortable. Say it to their face, not behind their back. Praise publicly, correct privately. We see potential in people bigger than they see in themselves &mdash; and we tell them.</p>
       </div>
 
       <div class="standard-card reveal">
-        <p class="standard-num">Standard 04</p>
-        <h3>The Standard You Walk Past</h3>
-        <p class="standard-tagline">No Excuses, Just Fixes</p>
-        <p>Ignoring a mistake is the same as approving it. We trade excuses for ownership. Everyone on a Salt site is a quality control officer.</p>
-      </div>
-
-      <div class="standard-card reveal">
-        <p class="standard-num">Standard 05</p>
-        <h3>Don't Just Deliver, Delight</h3>
-        <p class="standard-tagline">The Swan Effect</p>
-        <p>Meeting the contract is baseline. We look for the extra 5%. Above the surface: calm, smiling, adaptive. Below: paddling furiously. The client never feels the splash.</p>
-      </div>
-
-      <div class="standard-card reveal">
-        <p class="standard-num">Standard 06</p>
-        <h3>Relentless Craftsmanship</h3>
-        <p class="standard-tagline">The Homeowner Test</p>
-        <p>Craftsmanship means the work is a personal reflection of the maker. We ask: "If I were paying for this out of my own pocket, for my own house, would I accept it?"</p>
+        <p class="standard-num">T</p>
+        <h3>Trust The Process</h3>
+        <p class="standard-tagline">Measure Twice, Cut Once.</p>
+        <p>Lumber and stone are expensive; questions are free. We don't guess. If you aren't 100% sure, stop and ask. Follow the SOP &mdash; every single time. Want to improve it? Great. After you complete it. No one is above the process.</p>
       </div>
     </div>
   </div>
@@ -1131,8 +1284,8 @@
 
       <div class="tool-card reveal">
         <div class="tool-icon">&#128203;</div>
-        <h3>Digital WHS Compliance</h3>
-        <p>SWMs, JSAs, site inductions, daily diaries &mdash; all digital, all fast. Complete your compliance in minutes on your phone. No more paper forms in the rain.</p>
+        <h3>Genuine WHS Compliance</h3>
+        <p>SWMs, JSAs, site inductions, daily diaries, incident reports &mdash; all built into Trellis. Genuine, 100% compliant safety management on every project. Fast enough that it actually gets done. Thorough enough that your livelihood is protected.</p>
       </div>
 
       <div class="tool-card reveal">
@@ -1143,8 +1296,8 @@
 
       <div class="tool-card reveal">
         <div class="tool-icon">&#128208;</div>
-        <h3>Landscaper-Designed Plans</h3>
-        <p>Every plan is created by qualified structural landscapers. Detailed, buildable, and signed off before you start. Clear scope, clear dimensions, clear expectations.</p>
+        <h3>In-House Design Team</h3>
+        <p>Our designers work under the same roof as our build crews. Every plan is created by qualified structural landscapers who've actually built what they're drawing. Detailed, buildable, and signed off before you step on site.</p>
       </div>
     </div>
   </div>
@@ -1158,7 +1311,7 @@
 
     <div class="offer-banner reveal">
       <div class="offer-pay">$85,000 &ndash; $110,000</div>
-      <div class="offer-pay-sub">+ Superannuation &bull; Based on Experience</div>
+      <div class="offer-pay-sub">+ Superannuation + Bonuses + Profit Share for Team Leaders &bull; Based on Experience</div>
 
       <div class="offer-grid">
         <div class="offer-item">
@@ -1174,8 +1327,8 @@
           <p>Proper equipment, properly maintained. You shouldn't have to fight your tools.</p>
         </div>
         <div class="offer-item">
-          <h4>Career Growth</h4>
-          <p>A real path to lead, foreman, or project manager as we scale. Not a dead end.</p>
+          <h4>Career Growth + Profit Share</h4>
+          <p>A real path to team leader with bonuses and profit share. We develop partners, not just employees.</p>
         </div>
         <div class="offer-item">
           <h4>Work You're Proud Of</h4>
