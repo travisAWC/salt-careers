@@ -505,56 +505,123 @@
   .standards-section .section-title em { color: var(--sage-light); }
   .standards-section .section-desc { color: var(--stone); }
 
-  .standards-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    margin-top: 48px;
+  /* S.A.L.T. Acronym Layout */
+  .salt-acronym-header {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin: 48px 0 16px;
   }
 
-  .standard-card {
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(184, 176, 162, 0.1);
+  .salt-letter-preview {
+    width: 56px;
+    height: 56px;
+    border: 1px solid rgba(122, 140, 110, 0.3);
     border-radius: 3px;
-    padding: 32px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: var(--sage);
+    background: rgba(255, 255, 255, 0.04);
     transition: all 0.3s;
   }
 
-  .standard-card:hover {
-    background: rgba(255, 255, 255, 0.07);
+  .salt-letter-preview.active {
+    background: var(--sage-dark);
+    color: var(--warm-white);
+    border-color: var(--sage-dark);
+  }
+
+  .salt-acronym-hint {
+    text-align: center;
+    font-size: 0.72rem;
+    color: var(--stone);
+    margin-bottom: 48px;
+    letter-spacing: 0.05em;
+  }
+
+  .salt-standards-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .salt-standard-row {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 0;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(184, 176, 162, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+    transition: all 0.3s;
+  }
+
+  .salt-standard-row:hover {
+    background: rgba(255, 255, 255, 0.06);
     border-color: rgba(122, 140, 110, 0.3);
+    transform: translateX(4px);
   }
 
-  .standard-num {
-    font-size: 0.6rem;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: var(--sage);
-    font-weight: 500;
-    margin-bottom: 16px;
-  }
-
-  .standard-card h3 {
+  .salt-standard-letter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--sage-dark);
     font-family: 'Cormorant Garamond', serif;
     font-weight: 600;
-    font-size: 1.2rem;
-    margin-bottom: 6px;
+    font-size: 2.2rem;
     color: var(--warm-white);
+    min-height: 100%;
   }
 
-  .standard-tagline {
+  .salt-standard-body {
+    padding: 28px 32px;
+  }
+
+  .salt-standard-body h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 1.25rem;
+    color: var(--warm-white);
+    margin-bottom: 4px;
+  }
+
+  .salt-standard-body .tagline {
     font-size: 0.7rem;
     letter-spacing: 0.15em;
     text-transform: uppercase;
     color: var(--terracotta);
     font-weight: 500;
-    margin-bottom: 14px;
+    margin-bottom: 12px;
   }
 
-  .standard-card p {
+  .salt-standard-body p {
     font-size: 0.83rem;
     color: var(--stone);
     line-height: 1.7;
+  }
+
+  @media (max-width: 600px) {
+    .salt-standard-row {
+      grid-template-columns: 56px 1fr;
+    }
+    .salt-standard-letter {
+      font-size: 1.6rem;
+    }
+    .salt-standard-body {
+      padding: 20px 18px;
+    }
+    .salt-letter-preview {
+      width: 44px;
+      height: 44px;
+      font-size: 1.2rem;
+    }
   }
 
   /* ── TOOLS ── */
@@ -1098,7 +1165,7 @@
 <section class="compare-section" id="compare">
   <div class="container">
     <p class="section-label reveal">The Contrast</p>
-    <h2 class="section-title reveal">Most companies vs. <em>Salt.</em></h2>
+    <h2 class="section-title reveal">The Industry Norm vs. <em>Salt.</em></h2>
     <p class="section-desc reveal">A quick look at how we handle the six biggest frustrations in landscaping.</p>
 
     <div class="compare-grid reveal">
@@ -1168,7 +1235,7 @@
           <p>Same projects, same pay, no growth path no matter how good you are</p>
         </div>
         <div class="compare-right">
-          <h4>Apprentice to partner</h4>
+          <h4>Clear Path to Partner</h4>
           <p>Clear path to team leader with bonuses and profit share as we scale together</p>
         </div>
       </div>
@@ -1236,33 +1303,49 @@
     <h2 class="section-title reveal">Four non-negotiables that define <em>who we are.</em></h2>
     <p class="section-desc reveal">Not rules. Not suggestions. Identity. These are practiced on every site, every day. If they resonate with you, you'll feel at home here.</p>
 
-    <div class="standards-grid" style="grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));">
-      <div class="standard-card reveal">
-        <p class="standard-num">S</p>
-        <h3>Standard of Excellence</h3>
-        <p class="standard-tagline">Leave No Trace. Sharpen Your Blade.</p>
-        <p>We don't care for industry standards. We set the standard, and our standard is excellence. We leave every site cleaner than we found it. No tire tracks on the lawn, no cigarette butts in the mulch. Tight joints, crisp edges, smooth finishes. "Good enough" is not in our vocabulary &mdash; we do it right or not at all.</p>
+    <div class="salt-acronym-header reveal">
+      <div class="salt-letter-preview active">S</div>
+      <div class="salt-letter-preview active">A</div>
+      <div class="salt-letter-preview active">L</div>
+      <div class="salt-letter-preview active">T</div>
+    </div>
+    <p class="salt-acronym-hint reveal">Standard of Excellence &bull; Always Take Ownership &bull; Lift Each Other &bull; Trust The Process</p>
+
+    <div class="salt-standards-stack">
+      <div class="salt-standard-row reveal">
+        <div class="salt-standard-letter">S</div>
+        <div class="salt-standard-body">
+          <h3>Standard of Excellence</h3>
+          <p class="tagline">Leave No Trace. Sharpen Your Blade.</p>
+          <p>We don't care for industry standards. We set the standard, and our standard is excellence. We leave every site cleaner than we found it. No tire tracks on the lawn, no cigarette butts in the mulch. Tight joints, crisp edges, smooth finishes. "Good enough" is not in our vocabulary &mdash; we do it right or not at all.</p>
+        </div>
       </div>
 
-      <div class="standard-card reveal">
-        <p class="standard-num">A</p>
-        <h3>Always Take Ownership</h3>
-        <p class="standard-tagline">Plumb Is Plumb. No Excuses.</p>
-        <p>A post is either vertical or it isn't. Weather, traffic, or a bad night doesn't change the standard. We say "I screwed up" first. We fix problems in 30 minutes, not 30 excuses. If you see a problem, you own it &mdash; even if you didn't cause it.</p>
+      <div class="salt-standard-row reveal">
+        <div class="salt-standard-letter">A</div>
+        <div class="salt-standard-body">
+          <h3>Always Take Ownership</h3>
+          <p class="tagline">Plumb Is Plumb. No Excuses.</p>
+          <p>A post is either vertical or it isn't. Weather, traffic, or a bad night doesn't change the standard. We say "I screwed up" first. We fix problems in 30 minutes, not 30 excuses. If you see a problem, you own it &mdash; even if you didn't cause it.</p>
+        </div>
       </div>
 
-      <div class="standard-card reveal">
-        <p class="standard-num">L</p>
-        <h3>Lift Each Other</h3>
-        <p class="standard-tagline">Words Build or Destroy. Choose Courage.</p>
-        <p>We draw out the potential in everyone, even when it's uncomfortable. Say it to their face, not behind their back. Praise publicly, correct privately. We see potential in people bigger than they see in themselves &mdash; and we tell them.</p>
+      <div class="salt-standard-row reveal">
+        <div class="salt-standard-letter">L</div>
+        <div class="salt-standard-body">
+          <h3>Lift Each Other</h3>
+          <p class="tagline">Words Build or Destroy. Choose Courage.</p>
+          <p>We draw out the potential in everyone, even when it's uncomfortable. Say it to their face, not behind their back. Praise publicly, correct privately. We see potential in people bigger than they see in themselves &mdash; and we tell them.</p>
+        </div>
       </div>
 
-      <div class="standard-card reveal">
-        <p class="standard-num">T</p>
-        <h3>Trust The Process</h3>
-        <p class="standard-tagline">Measure Twice, Cut Once.</p>
-        <p>Lumber and stone are expensive; questions are free. We don't guess. If you aren't 100% sure, stop and ask. Follow the SOP &mdash; every single time. Want to improve it? Great. After you complete it. No one is above the process.</p>
+      <div class="salt-standard-row reveal">
+        <div class="salt-standard-letter">T</div>
+        <div class="salt-standard-body">
+          <h3>Trust The Process</h3>
+          <p class="tagline">Measure Twice, Cut Once.</p>
+          <p>Lumber and stone are expensive; questions are free. We don't guess. If you aren't 100% sure, stop and ask. Follow the SOP &mdash; every single time. Want to improve it? Great. After you complete it. No one is above the process.</p>
+        </div>
       </div>
     </div>
   </div>
