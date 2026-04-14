@@ -1724,25 +1724,61 @@
     const certs = [];
     form.querySelectorAll('input[name="certs"]:checked').forEach(cb => certs.push(cb.value));
 
-    const data = {};
-    formData.forEach((value, key) => {
-      if (key !== 'skills' && key !== 'certs' && key !== 'resume') {
-        data[key] = value;
-      }
-    });
-    data.skills = skills;
-    data.certs = certs;
+    // Build email body
+    const name = formData.get('name') || '';
+    const phone = formData.get('phone') || '';
+    const email = formData.get('email') || '';
+    const location = formData.get('location') || '';
+    const yearsLandscaping = formData.get('years_landscaping') || '';
+    const yearsManaging = formData.get('years_managing') || '';
+    const softLandscaping = formData.get('soft_landscaping') || '';
+    const bestProject = formData.get('best_project') || '';
+    const workplaceValues = formData.get('workplace_values') || '';
+    const plant = formData.get('plant') || '';
 
-    // For now, log to console and show success
-    // TODO: Connect to Formspree, Google Sheets, or backend endpoint
-    console.log('Application submitted:', JSON.stringify(data, null, 2));
+    const subject = 'Landscaper Application — ' + name;
 
-    // Show success state
-    form.style.display = 'none';
-    document.getElementById('formSuccess').style.display = 'block';
+    let body = '';
+    body += 'SALT LANDSCAPING — NEW APPLICATION\n';
+    body += '══════════════════════════════════\n\n';
+    body += 'CONTACT DETAILS\n';
+    body += '  Name: ' + name + '\n';
+    body += '  Phone: ' + phone + '\n';
+    body += '  Email: ' + email + '\n';
+    body += '  Location: ' + location + '\n\n';
+    body += 'EXPERIENCE\n';
+    body += '  Years in Landscaping: ' + yearsLandscaping + '\n';
+    body += '  Years Managing Projects/Teams: ' + yearsManaging + '\n';
+    body += '  Hard Landscaping Skills: ' + (skills.length > 0 ? skills.join(', ') : 'None selected') + '\n';
+    body += '  Soft Landscaping: ' + softLandscaping + '\n\n';
+    body += 'TICKETS & CERTIFICATIONS\n';
+    body += '  ' + (certs.length > 0 ? certs.join(', ') : 'None selected') + '\n\n';
+    body += 'BEST PROJECT\n';
+    body += '  ' + bestProject + '\n\n';
+    if (workplaceValues) {
+      body += 'WHAT MATTERS MOST IN A WORKPLACE\n';
+      body += '  ' + workplaceValues + '\n\n';
+    }
+    if (plant) {
+      body += 'UNDERRATED PLANT PICK\n';
+      body += '  ' + plant + '\n\n';
+    }
+    body += '══════════════════════════════════\n';
+    body += 'Submitted via saltlandscaping.com.au/careers\n';
 
-    // Scroll to success message
-    document.getElementById('formCard').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    // Open mailto
+    const mailto = 'mailto:hello@saltlandscaping.com.au'
+      + '?subject=' + encodeURIComponent(subject)
+      + '&body=' + encodeURIComponent(body);
+
+    window.location.href = mailto;
+
+    // Show success state after a short delay (to allow mailto to open)
+    setTimeout(function() {
+      form.style.display = 'none';
+      document.getElementById('formSuccess').style.display = 'block';
+      document.getElementById('formCard').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }, 500);
   }
 </script>
 
