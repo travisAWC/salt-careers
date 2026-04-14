@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Application Received — Salt Landscaping</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a18;
+    --cream: #f4f1eb;
+    --sage: #7a8c6e;
+    --sage-light: #c2ccb8;
+    --sage-dark: #4a5a40;
+    --terracotta: #c4724e;
+    --stone: #b8b0a2;
+    --stone-light: #ddd8d0;
+    --warm-white: #faf8f4;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--warm-white);
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 24px;
+    text-align: center;
+  }
+
+  .logo {
+    width: 140px;
+    margin-bottom: 40px;
+    opacity: 0.15;
+  }
+
+  .icon {
+    width: 72px;
+    height: 72px;
+    background: rgba(122, 140, 110, 0.12);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    margin: 0 auto 28px;
+    color: var(--sage-dark);
+  }
+
+  h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: clamp(2rem, 5vw, 3rem);
+    line-height: 1.15;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+  }
+
+  h1 em {
+    color: var(--sage-dark);
+    font-style: italic;
+  }
+
+  p {
+    font-size: 0.95rem;
+    color: #6b6860;
+    max-width: 480px;
+    line-height: 1.75;
+    margin: 0 auto;
+  }
+
+  p + p {
+    margin-top: 12px;
+  }
+
+  .contact {
+    margin-top: 32px;
+    font-size: 0.82rem;
+    color: var(--stone);
+  }
+
+  .contact a {
+    color: var(--sage-dark);
+    text-decoration: none;
+  }
+
+  .contact a:hover {
+    text-decoration: underline;
+  }
+
+  .back-link {
+    margin-top: 40px;
+    display: inline-block;
+    background: var(--sage-dark);
+    color: white;
+    border: none;
+    padding: 12px 28px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    border-radius: 2px;
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+
+  .back-link:hover {
+    background: #3d4d35;
+    transform: translateY(-1px);
+  }
+
+  .footer {
+    margin-top: 60px;
+    font-size: 0.68rem;
+    color: rgba(184, 176, 162, 0.6);
+  }
+</style>
+</head>
+<body>
+
+  <img src="salt_logo.png" alt="Salt Landscaping" class="logo">
+
+  <div class="icon">&#10003;</div>
+
+  <h1>Application <em>received.</em></h1>
+
+  <p>Thanks for taking the time to apply to Salt Landscaping. We review every application personally and will be in touch within a few days if there's a fit.</p>
+
+  <p>In the meantime, check us out on Instagram to see the kind of work we do.</p>
+
+  <div class="contact">
+    Questions? Call <strong><a href="tel:0426634828">0426 634 828</a></strong> or email <strong><a href="mailto:hello@saltlandscaping.com.au">hello@saltlandscaping.com.au</a></strong>
+  </div>
+
+  <a href="index.html" class="back-link">Back to Careers</a>
+
+  <p class="footer">&copy; 2026 Salt Landscaping / Cactus Culture Pty Ltd</p>
+
+</body>
+</html>
