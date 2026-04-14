@@ -1442,8 +1442,8 @@
           <p>Premium projects worth putting on your portfolio. The kind you drive past and smile.</p>
         </div>
         <div class="offer-item">
-          <h4>Owners Who Work Alongside You</h4>
-          <p>Not above you. Not from an office. Tim, Billy, and Travis are on the tools with you.</p>
+          <h4>Direct Access to the Owners</h4>
+          <p>Not behind a closed door. Tim, Billy, and Travis are available to you on any decision, any time. No layers.</p>
         </div>
       </div>
     </div>
@@ -1470,14 +1470,7 @@
     <div class="form-container">
       <div class="form-card reveal" id="formCard">
 
-        <form id="applicationForm" action="https://formsubmit.co/hello@saltlandscaping.com.au" method="POST" enctype="multipart/form-data">
-
-          <!-- FormSubmit config -->
-          <input type="hidden" name="_subject" value="New Landscaper Application — Salt Careers">
-          <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_template" value="table">
-          <input type="hidden" name="_next" value="https://travisawc.github.io/salt-careers/thankyou.html">
-          <input type="text" name="_honey" style="display:none">
+        <form id="applicationForm" onsubmit="handleSubmit(event)">
 
           <!-- Contact Details -->
           <div class="form-divider">
