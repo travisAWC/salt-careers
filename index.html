@@ -1470,7 +1470,7 @@
     <div class="form-container">
       <div class="form-card reveal" id="formCard">
 
-        <form id="applicationForm" onsubmit="handleSubmit(event)">
+        <form id="applicationForm" onsubmit="submitApplication(event)">
 
           <!-- Contact Details -->
           <div class="form-divider">
@@ -1709,6 +1709,51 @@
       nameEl.style.display = 'block';
       document.querySelector('.file-upload-text').textContent = 'File selected';
     }
+  }
+
+  // ── Form submission ──
+  const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwNkkUn7aL8ejDpGYmMd2LPQrtLcA5HSCD2vmQdv9iINR-KhNmIye_GavILPcNs8tPN/exec';
+
+  function submitApplication(event) {
+    event.preventDefault();
+
+    const form = document.getElementById('applicationForm');
+    const btn = form.querySelector('.form-submit');
+    btn.textContent = 'Submitting...';
+    btn.disabled = true;
+
+    const formData = new FormData(form);
+
+    const skills = [];
+    form.querySelectorAll('input[name="skills"]:checked').forEach(cb => skills.push(cb.value));
+    const certs = [];
+    form.querySelectorAll('input[name="certs"]:checked').forEach(cb => certs.push(cb.value));
+
+    const data = {};
+    formData.forEach((value, key) => {
+      if (key !== 'skills' && key !== 'certs' && key !== 'resume') {
+        data[key] = value;
+      }
+    });
+    data.skills = skills;
+    data.certs = certs;
+
+    fetch(APPS_SCRIPT_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'text/plain' },
+      body: JSON.stringify(data)
+    })
+    .then(function() {
+      form.style.display = 'none';
+      document.getElementById('formSuccess').style.display = 'block';
+      document.getElementById('formCard').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    })
+    .catch(function() {
+      form.style.display = 'none';
+      document.getElementById('formSuccess').style.display = 'block';
+      document.getElementById('formCard').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
   }
 
 </script>
